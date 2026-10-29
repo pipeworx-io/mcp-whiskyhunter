@@ -1,0 +1,48 @@
+[
+  {
+    "name": "list_distilleries",
+    "description": "List whisky distilleries tracked by whiskyhunter.net (300+ distilleries with auction data). Returns each distillery name, slug, and country. Use the slug with distillery_prices to get its auction price history. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "search": {
+          "type": "string",
+          "description": "Optional case-insensitive substring filter on distillery name, e.g. \"macallan\", \"glen\"."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max distilleries to return (default 25, max 60)."
+        }
+      }
+    }
+  },
+  {
+    "name": "distillery_prices",
+    "description": "A single distillery's monthly online whisky-auction price/volume history: per-month max/min/mean winning bid, total trading volume, and lots count. Prices are in the auctions' reporting currency and aggregate many online auction houses. Pass a distillery slug from list_distilleries (e.g. \"macallan\", \"8_doors\"). Returns the most recent ~60 months. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "Distillery slug from list_distilleries, e.g. \"macallan\", \"8_doors\", \"ardbeg\"."
+        }
+      },
+      "required": [
+        "slug"
+      ]
+    }
+  },
+  {
+    "name": "auction_stats",
+    "description": "Latest aggregate monthly stats per online whisky-auction house: mean winning bid, total trading volume, lots count for that house, and the all-auctions total lots count for the month. Aggregates online whisky-auction data; prices are in each house's reporting currency. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "Max auction-house records to return, newest first (default 25, max 60)."
+        }
+      }
+    }
+  }
+]
