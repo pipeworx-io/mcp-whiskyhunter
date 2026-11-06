@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-whiskyhunter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "WhiskyHunter MCP.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "whiskyhunter",
     "gatewaySlug": "whiskyhunter",
-    "sourceHash": "v1-379a367fddfe88c6ca1316c90532cc0da7a19729d2539281388c31e556e72738",
-    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
+    "sourceHash": "v1-d7e494ac73a0e5ea31241657ede80132c3b38a0e44a00eed368bd54317416d48",
+    "sourceCommit": "78b905fa3a6880dfb85c79150f4bffe8cf50ef00"
   }
 }
